@@ -4,8 +4,6 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var sensitivity = 0.002 
-@onready var directional: Node3D = $Directional
-@onready var spot_light_3d: SpotLight3D = $Directional/SpotLight3D
 @onready var camera_3d: Camera3D = $Camera3D
 
 func _ready() -> void:
