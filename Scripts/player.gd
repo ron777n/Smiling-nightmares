@@ -6,6 +6,9 @@ const JUMP_VELOCITY = 4.5
 var sensitivity = 0.002 
 @onready var camera_3d: Camera3D = $Camera3D
 
+func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		rotation.y = rotation.y - event.relative.x * sensitivity

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://18s2eccufdmd"]
+[gd_scene load_steps=0 format=3 uid="uid://18s2eccufdmd"]
 
 [node name="Main menu" type="Node2D"]
 
