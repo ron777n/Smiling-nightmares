@@ -1,3 +1,230 @@
-[gd_scene format=3 uid="uid://btjkaeulvuiv7"]
+[gd_scene load_steps=20 format=3 uid="uid://btjkaeulvuiv7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bdjry"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_iufso"]
+sky_material = SubResource("ProceduralSkyMaterial_bdjry")
+
+[sub_resource type="Environment" id="Environment_8te53"]
+background_mode = 2
+sky = SubResource("Sky_iufso")
+tonemap_mode = 2
+fog_light_energy = 0.0
+fog_density = 0.09
+
+[sub_resource type="BoxMesh" id="BoxMesh_bdjry"]
+size = Vector3(100, 0.1, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mlwj"]
+albedo_color = Color(1, 0, 0, 1)
+uv1_scale = Vector3(50.005, 50.005, 50.005)
+
+[sub_resource type="BoxMesh" id="BoxMesh_iufso"]
+material = SubResource("StandardMaterial3D_7mlwj")
+size = Vector3(3, 30, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8te53"]
+material = SubResource("StandardMaterial3D_7mlwj")
+size = Vector3(3, 30, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_flcxr"]
+material = SubResource("StandardMaterial3D_7mlwj")
+size = Vector3(3, 30, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3chno"]
+material = SubResource("StandardMaterial3D_7mlwj")
+size = Vector3(3, 30, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4v226"]
+material = SubResource("StandardMaterial3D_7mlwj")
+size = Vector3(3, 30, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5p2nh"]
+material = SubResource("StandardMaterial3D_7mlwj")
+size = Vector3(3, 30, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ygr8y"]
+material = SubResource("StandardMaterial3D_7mlwj")
+size = Vector3(3, 30, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sh3wa"]
+material = SubResource("StandardMaterial3D_7mlwj")
+size = Vector3(3, 30, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_r871k"]
+material = SubResource("StandardMaterial3D_7mlwj")
+size = Vector3(3, 30, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_apprp"]
+material = SubResource("StandardMaterial3D_7mlwj")
+size = Vector3(3, 30, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7mlwj"]
+material = SubResource("StandardMaterial3D_7mlwj")
+size = Vector3(3, 30, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kniwo"]
+material = SubResource("StandardMaterial3D_7mlwj")
+size = Vector3(3, 30, 20)
+
+[sub_resource type="Animation" id="Animation_bdjry"]
+resource_name = "Dark"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldEnvironment:environment:fog_light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorldEnvironment:environment:fog_density")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.09]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WorldEnvironment:environment:fog_enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iufso"]
+_data = {
+&"Dark": SubResource("Animation_bdjry")
+}
 
 [node name="Map1" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8te53")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Walls" type="StaticBody3D" parent="."]
+
+[node name="Floor" type="MeshInstance3D" parent="Walls"]
+mesh = SubResource("BoxMesh_bdjry")
+skeleton = NodePath("../..")
+
+[node name="Wall" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.011494, 0, 0)
+mesh = SubResource("BoxMesh_iufso")
+skeleton = NodePath("../..")
+
+[node name="Wall2" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.73978, 0, 0)
+mesh = SubResource("BoxMesh_iufso")
+skeleton = NodePath("../..")
+
+[node name="Wall3" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.26021957, 0, -49.5)
+mesh = SubResource("BoxMesh_iufso")
+skeleton = NodePath("../..")
+
+[node name="Wall4" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.26021957, 0, 49.5)
+mesh = SubResource("BoxMesh_iufso")
+skeleton = NodePath("../..")
+
+[node name="Wall5" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 33.53978, 0, -17)
+mesh = SubResource("BoxMesh_8te53")
+skeleton = NodePath("../..")
+
+[node name="Wall7" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5.4602203, 0, -17)
+mesh = SubResource("BoxMesh_flcxr")
+skeleton = NodePath("../..")
+
+[node name="Wall8" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5.4602203, 0, -34)
+mesh = SubResource("BoxMesh_3chno")
+skeleton = NodePath("../..")
+
+[node name="Wall10" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.96022, 0, -3.5)
+mesh = SubResource("BoxMesh_4v226")
+skeleton = NodePath("../..")
+
+[node name="Wall16" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.03978, 0, -3.5)
+mesh = SubResource("BoxMesh_4v226")
+skeleton = NodePath("../..")
+
+[node name="Wall17" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.03978, 0, -3.5)
+mesh = SubResource("BoxMesh_4v226")
+skeleton = NodePath("../..")
+
+[node name="Wall18" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.53978, 0, 15.5)
+mesh = SubResource("BoxMesh_5p2nh")
+skeleton = NodePath("../..")
+
+[node name="Wall19" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.53978, 0, 45)
+mesh = SubResource("BoxMesh_ygr8y")
+skeleton = NodePath("../..")
+
+[node name="Wall11" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.46022, 0, -20.5)
+mesh = SubResource("BoxMesh_4v226")
+skeleton = NodePath("../..")
+
+[node name="Wall13" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.46022, 0, 18)
+mesh = SubResource("BoxMesh_sh3wa")
+skeleton = NodePath("../..")
+
+[node name="Wall14" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -19.96022, 0, 31.5)
+mesh = SubResource("BoxMesh_r871k")
+skeleton = NodePath("../..")
+
+[node name="Wall15" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.03978, 0, 31.5)
+mesh = SubResource("BoxMesh_apprp")
+skeleton = NodePath("../..")
+
+[node name="Wall6" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 20.03978, 0, -25.5)
+mesh = SubResource("BoxMesh_7mlwj")
+skeleton = NodePath("../..")
+
+[node name="Wall9" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4.4602203, 0, -25.5)
+mesh = SubResource("BoxMesh_7mlwj")
+skeleton = NodePath("../..")
+
+[node name="Wall12" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -41.96022, 0, -7)
+mesh = SubResource("BoxMesh_kniwo")
+skeleton = NodePath("../..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_iufso")
+}
+autoplay = "Dark"
