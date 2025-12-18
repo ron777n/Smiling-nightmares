@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://btjkaeulvuiv7"]
+[gd_scene load_steps=13 format=3 uid="uid://btjkaeulvuiv7"]
 
 [ext_resource type="Script" uid="uid://bv4b3jufm08s7" path="res://Scripts/map_1.gd" id="1_8te53"]
 [ext_resource type="PackedScene" uid="uid://ca8gy211l7pft" path="res://Scenes/player.tscn" id="1_iufso"]
@@ -79,16 +79,11 @@ _data = {
 &"RESET": SubResource("Animation_8te53")
 }
 
-[sub_resource type="NavigationMesh" id="NavigationMesh_3chno"]
-vertices = PackedVector3Array(-24.5, 0.07, -24.5, -24.5, 0.07, 24.5, 24.5, 0.07, 24.5, 24.5, 0.07, -24.5)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
-cell_height = 0.01
-
 [sub_resource type="BoxMesh" id="BoxMesh_3chno"]
-size = Vector3(50, 0.1, 50)
+size = Vector3(100, 0.1, 100)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_3chno"]
-size = Vector3(50, 0.1, 50)
+[sub_resource type="BoxMesh" id="BoxMesh_7mlwj"]
+size = Vector3(100, 20, 3)
 
 [node name="Map1" type="Node3D"]
 script = ExtResource("1_8te53")
@@ -114,18 +109,12 @@ stream = ExtResource("3_flcxr")
 autoplay = true
 max_distance = 4096.0
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-navigation_mesh = SubResource("NavigationMesh_3chno")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/StaticBody3D"]
-mesh = SubResource("BoxMesh_3chno")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D"]
-shape = SubResource("BoxShape3D_3chno")
-
 [node name="Monster" parent="." node_paths=PackedStringArray("other_target") groups=["monster"] instance=ExtResource("4_3chno")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 2.5, -16)
 other_target = NodePath("../Player")
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_3chno")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_7mlwj")

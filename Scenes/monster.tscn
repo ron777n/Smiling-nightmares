@@ -30,5 +30,3 @@ omni_range = 0.233
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
 shape = SubResource("SphereShape3D_i44lo")
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
