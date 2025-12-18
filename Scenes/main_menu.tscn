@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://18s2eccufdmd"]
+
+[node name="Main menu" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0.8272604, 0.21741936, 0, 1)
+offset_left = 368.0
+offset_top = 48.0
+offset_right = 706.0
+offset_bottom = 138.0
+text = "SMILING NIGHTMARES"
+horizontal_alignment = 1
+vertical_alignment = 1
