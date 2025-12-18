@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2mniqcn0mtnr"]
+
+[ext_resource type="Material" uid="uid://oc5d5i0op3ym" path="res://door.tres" id="1_p0e35"]
+[ext_resource type="Material" uid="uid://b46ywaemphcxo" path="res://wood_like_texture.tres" id="1_w6aom"]
+
+[node name="door" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 0.1, 0, 0, 0)
+material_override = ExtResource("1_p0e35")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 0.1, 0.5725133, 0, 0)
+material_override = ExtResource("1_w6aom")
+size = Vector3(0.1586914, 1, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 0.1, -0.5768949, 0, 0)
+material_override = ExtResource("1_w6aom")
+size = Vector3(0.1586914, 1, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 0.1, 0.35864085, -0.008503139, -0.060565654)
+material_override = ExtResource("1_w6aom")
+size = Vector3(0.09375, 0.05020523, 2.1170044)
