@@ -4,8 +4,8 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var sensitivity = 0.002 
-@onready var camera_3d: Camera3D = $Camera3D
-@onready var spot_light_3d: SpotLight3D = $SpotLight3D
+@onready var directional: Node3D = $Directional
+@onready var spot_light_3d: SpotLight3D = $Directional/SpotLight3D
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -13,8 +13,8 @@ func _ready() -> void:
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		rotation.y = rotation.y - event.relative.x * sensitivity
-		camera_3d.rotation.x = camera_3d.rotation.x - event.relative.y * sensitivity
-		camera_3d.rotation.x = clamp(camera_3d.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+		directional.rotation.x = directional.rotation.x - event.relative.y * sensitivity
+		directional.rotation.x = clamp(directional.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 		
 	if Input.is_action_just_pressed("Quit"):
 		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
