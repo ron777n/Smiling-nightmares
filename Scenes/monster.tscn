@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbiua1pjcovxb"]
+
+[ext_resource type="Script" uid="uid://c2du41slh0rqh" path="res://Scenes/monster.gd" id="1_i44lo"]
+[ext_resource type="ArrayMesh" uid="uid://dx6nrhxkf4b83" path="res://Resources/Models/Monster.obj" id="1_xhoai"]
+
+[node name="Monster" type="Node3D"]
+script = ExtResource("1_i44lo")
+
+[node name="Monster Model" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06808269, 1.1920929e-07, -0.38495803)
+mesh = ExtResource("1_xhoai")
