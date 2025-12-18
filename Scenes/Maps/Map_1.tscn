@@ -109,8 +109,9 @@ stream = ExtResource("3_flcxr")
 autoplay = true
 max_distance = 4096.0
 
-[node name="Monster" parent="." groups=["monster"] instance=ExtResource("4_3chno")]
+[node name="Monster" parent="." node_paths=PackedStringArray("target") groups=["monster"] instance=ExtResource("4_3chno")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 2.5, -16)
+target = NodePath("../Player")
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_3chno")
