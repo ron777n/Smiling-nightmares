@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://btjkaeulvuiv7"]
+[gd_scene load_steps=23 format=3 uid="uid://btjkaeulvuiv7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bdjry"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -14,7 +14,11 @@ tonemap_mode = 2
 fog_light_energy = 0.0
 fog_density = 0.09
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bdjry"]
+albedo_color = Color(0.09366939, 0.09366938, 0.09366938, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_bdjry"]
+material = SubResource("StandardMaterial3D_bdjry")
 size = Vector3(100, 0.1, 100)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mlwj"]
@@ -49,6 +53,14 @@ size = Vector3(3, 30, 30)
 material = SubResource("StandardMaterial3D_7mlwj")
 size = Vector3(3, 30, 30)
 
+[sub_resource type="BoxMesh" id="BoxMesh_y66ms"]
+material = SubResource("StandardMaterial3D_7mlwj")
+size = Vector3(3, 30, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5lco0"]
+material = SubResource("StandardMaterial3D_7mlwj")
+size = Vector3(3, 30, 30)
+
 [sub_resource type="BoxMesh" id="BoxMesh_sh3wa"]
 material = SubResource("StandardMaterial3D_7mlwj")
 size = Vector3(3, 30, 30)
@@ -59,7 +71,7 @@ size = Vector3(3, 30, 30)
 
 [sub_resource type="BoxMesh" id="BoxMesh_apprp"]
 material = SubResource("StandardMaterial3D_7mlwj")
-size = Vector3(3, 30, 30)
+size = Vector3(3, 30, 25.195)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7mlwj"]
 material = SubResource("StandardMaterial3D_7mlwj")
@@ -128,6 +140,11 @@ shadow_enabled = true
 mesh = SubResource("BoxMesh_bdjry")
 skeleton = NodePath("../..")
 
+[node name="Floor2" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
+mesh = SubResource("BoxMesh_bdjry")
+skeleton = NodePath("../..")
+
 [node name="Wall" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.011494, 0, 0)
 mesh = SubResource("BoxMesh_iufso")
@@ -186,6 +203,21 @@ skeleton = NodePath("../..")
 [node name="Wall19" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.53978, 0, 45)
 mesh = SubResource("BoxMesh_ygr8y")
+skeleton = NodePath("../..")
+
+[node name="Wall20" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4602203, 0, 18)
+mesh = SubResource("BoxMesh_y66ms")
+skeleton = NodePath("../..")
+
+[node name="Wall22" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4602203, 0, 45.5)
+mesh = SubResource("BoxMesh_y66ms")
+skeleton = NodePath("../..")
+
+[node name="Wall21" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.03978, 0, 18)
+mesh = SubResource("BoxMesh_5lco0")
 skeleton = NodePath("../..")
 
 [node name="Wall11" type="MeshInstance3D" parent="Walls"]
