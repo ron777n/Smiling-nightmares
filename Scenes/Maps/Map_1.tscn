@@ -1,11 +1,12 @@
-[gd_scene load_steps=32 format=3 uid="uid://btjkaeulvuiv7"]
+[gd_scene load_steps=33 format=3 uid="uid://btjkaeulvuiv7"]
 
 [ext_resource type="Script" uid="uid://bv4b3jufm08s7" path="res://Scripts/map_1.gd" id="1_8te53"]
 [ext_resource type="PackedScene" uid="uid://ca8gy211l7pft" path="res://Scenes/player.tscn" id="1_iufso"]
 [ext_resource type="AudioStream" uid="uid://caa4kbguym080" path="res://Sound/horror-ambience-01-66708.mp3" id="3_flcxr"]
 [ext_resource type="PackedScene" uid="uid://dbiua1pjcovxb" path="res://Scenes/monster.tscn" id="4_3chno"]
-[ext_resource type="Material" uid="uid://dpw2eggrmcv1b" path="res://Resources/Floor_Roof.tres" id="5_4v226"]
-[ext_resource type="Material" uid="uid://bfaxri1mpcs3q" path="res://Resources/Walls.tres" id="5_7mlwj"]
+[ext_resource type="Material" uid="uid://dpw2eggrmcv1b" path="res://Resources/Materials/Floor_Roof.tres" id="5_4v226"]
+[ext_resource type="Material" uid="uid://bfaxri1mpcs3q" path="res://Resources/Materials/Walls.tres" id="5_7mlwj"]
+[ext_resource type="PackedScene" uid="uid://c7usmqd3syewo" path="res://Scenes/music_box.tscn" id="7_5p2nh"]
 
 [sub_resource type="Environment" id="Environment_8te53"]
 glow_intensity = 0.0
@@ -616,3 +617,6 @@ mesh = SubResource("BoxMesh_4v226")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Mesh/InnerWall11/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_fjoa2")
+
+[node name="MusicBox" parent="." instance=ExtResource("7_5p2nh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.5, -46)
