@@ -1141,6 +1141,21 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_pkvtx")
 
+[sub_resource type="Animation" id="Animation_n1nin"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sketchfab_Scene/Sketchfab_model/2e095ddfc8b54ba58d2a7924fe862517_fbx/RootNode/MusicBox/Key:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_n413t"]
 resource_name = "Spin"
 loop_mode = 1
@@ -1155,21 +1170,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(6.2831855, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_n1nin"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sketchfab_Scene/Sketchfab_model/2e095ddfc8b54ba58d2a7924fe862517_fbx/RootNode/MusicBox/Key:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jn5su"]
