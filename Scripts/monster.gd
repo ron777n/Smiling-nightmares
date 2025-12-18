@@ -8,4 +8,4 @@ func _ready():
 func _process(_delta):
 	look_at(target.position)
 	
-	#sgrgsrgrsgr
+	#sgrgsrgrsgreedede
