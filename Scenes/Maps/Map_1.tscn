@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://btjkaeulvuiv7"]
+[gd_scene load_steps=23 format=3 uid="uid://btjkaeulvuiv7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bdjry"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -14,7 +14,11 @@ tonemap_mode = 2
 fog_light_energy = 0.0
 fog_density = 0.09
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bdjry"]
+albedo_color = Color(0.09366939, 0.09366938, 0.09366938, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_bdjry"]
+material = SubResource("StandardMaterial3D_bdjry")
 size = Vector3(100, 0.1, 100)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mlwj"]
@@ -133,6 +137,11 @@ shadow_enabled = true
 [node name="Walls" type="StaticBody3D" parent="."]
 
 [node name="Floor" type="MeshInstance3D" parent="Walls"]
+mesh = SubResource("BoxMesh_bdjry")
+skeleton = NodePath("../..")
+
+[node name="Floor2" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
 mesh = SubResource("BoxMesh_bdjry")
 skeleton = NodePath("../..")
 

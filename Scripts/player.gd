@@ -5,9 +5,11 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var sensitivity = 0.002 
 @onready var camera_3d: Camera3D = $Camera3D
+@onready var spot_light_3d: SpotLight3D = $SpotLight3D
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	spot_light_3d.visible = false
 	
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -15,7 +17,10 @@ func _unhandled_input(event):
 		camera_3d.rotation.x = camera_3d.rotation.x - event.relative.y * sensitivity
 		camera_3d.rotation.x = clamp(camera_3d.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 		
-		
+	if Input.is_action_just_pressed("flashlight"):
+		spot_light_3d.visible = true
+	if Input.is_action_just_released("flashlight"):
+		spot_light_3d.visible = false
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
