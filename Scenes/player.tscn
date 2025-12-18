@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://ca8gy211l7pft"]
+[gd_scene load_steps=5 format=3 uid="uid://ca8gy211l7pft"]
 
 [ext_resource type="Script" uid="uid://db58hja0e2om4" path="res://Scripts/player.gd" id="1_v0iea"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0iea"]
+albedo_color = Color(1, 0, 0, 1)
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_f60y1"]
+material = SubResource("StandardMaterial3D_v0iea")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v0iea"]
 
@@ -19,8 +23,16 @@ shape = SubResource("CapsuleShape3D_v0iea")
 
 [node name="Camera3D" type="Camera3D" parent="Directional"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+<<<<<<< HEAD
+=======
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Directional"]
 light_energy = 0.6
+<<<<<<< HEAD
 spot_range = 15.353
 spot_angle = 30.0
+=======
+spot_range = 10.0
+spot_angle = 10.0
+>>>>>>> ddc8205c505e1adc41b8cbcde612f395ba8a67fe
+>>>>>>> ce53a0c54f70b2e73af5ba07ed46936fcd48049e
