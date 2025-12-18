@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2x76ilphs7p6"]
+[gd_scene load_steps=3 format=3 uid="uid://c2x76ilphs7p6"]
 
 [ext_resource type="Script" uid="uid://cyoemwssc1rd3" path="res://Scripts/control.gd" id="1_28flt"]
+[ext_resource type="AudioStream" uid="uid://ua75k3yq012f" path="res://Sound/Sound.mp3" id="2_48xlc"]
 
 [node name="Main menu" type="Node2D"]
 
@@ -44,7 +45,12 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Quit"
 
-[node name="Label" type="Label" parent="Control"]
+[node name="HitMe" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Hit Me"
+
+[node name="SMILINGNIGHTMARESLABEL" type="Label" parent="Control"]
 modulate = Color(0.8272604, 0.21741936, 0, 1)
 layout_mode = 1
 anchors_preset = 5
@@ -59,5 +65,12 @@ text = "SMILING NIGHTMARES"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_48xlc")
+volume_db = 24.0
+max_distance = 4096.0
+bus = &"Jumpscare"
+
 [connection signal="pressed" from="Control/VBoxContainer/NewGame" to="Control" method="_on_new_game_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Quit" to="Control" method="_on_quit_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/HitMe" to="Control" method="_on_hit_me_pressed"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=46 format=3 uid="uid://btjkaeulvuiv7"]
+[gd_scene load_steps=47 format=3 uid="uid://btjkaeulvuiv7"]
 
 [ext_resource type="Script" uid="uid://bv4b3jufm08s7" path="res://Scripts/map_1.gd" id="1_8te53"]
 [ext_resource type="PackedScene" uid="uid://ca8gy211l7pft" path="res://Scenes/player.tscn" id="1_iufso"]
+[ext_resource type="AudioStream" uid="uid://caa4kbguym080" path="res://Sound/horror-ambience-01-66708.mp3" id="3_flcxr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bdjry"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -473,3 +474,8 @@ autoplay = "Dark"
 
 [node name="Player" parent="." instance=ExtResource("1_iufso")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5, 2.945774, -9.5)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_flcxr")
+autoplay = true
+max_distance = 4096.0
