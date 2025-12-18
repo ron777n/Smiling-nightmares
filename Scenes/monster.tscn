@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dbiua1pjcovxb"]
 
-[ext_resource type="Script" uid="uid://c2du41slh0rqh" path="res://Scenes/monster.gd" id="1_i44lo"]
+[ext_resource type="Script" uid="uid://c2du41slh0rqh" path="res://Scripts/monster.gd" id="1_i44lo"]
 [ext_resource type="ArrayMesh" uid="uid://dx6nrhxkf4b83" path="res://Resources/Models/Monster.obj" id="1_xhoai"]
 
 [node name="Monster" type="Node3D"]
