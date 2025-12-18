@@ -22,9 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://bkmj7hwjxk46s" path="res://Resources/Models/MusicBox/music_box_-_mid_poly_17.png" id="20_r4jxd"]
 [ext_resource type="Texture2D" uid="uid://domy8b60gvle4" path="res://Resources/Models/MusicBox/music_box_-_mid_poly_18.png" id="21_8wmr4"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_p5x0l"]
-size = Vector3(40, 40, 40)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jcxke"]
 resource_name = "Box_Mat"
 cull_mode = 2
@@ -1181,6 +1178,9 @@ _data = {
 &"Spin": SubResource("Animation_n413t")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_p5x0l"]
+size = Vector3(40, 40, 40)
+
 [node name="MusicBox" type="Node3D"]
 script = ExtResource("1_2gt3d")
 
@@ -1194,11 +1194,6 @@ max_db = 6.0
 pitch_scale = 0.63
 max_distance = 30.0
 bus = &"Jumpscare"
-
-[node name="Area3D" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-shape = SubResource("BoxShape3D_p5x0l")
 
 [node name="Sketchfab_Scene" type="Node3D" parent="."]
 transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 0, 0)
@@ -1407,5 +1402,10 @@ skeleton = NodePath("")
 libraries = {
 &"": SubResource("AnimationLibrary_jn5su")
 }
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_p5x0l")
 
 [connection signal="body_shape_entered" from="Area3D" to="." method="_on_area_3d_body_shape_entered"]
