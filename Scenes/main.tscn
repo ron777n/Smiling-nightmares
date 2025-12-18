@@ -1,3 +1,27 @@
-[gd_scene format=3 uid="uid://cdbng8tbmogn3"]
+[gd_scene load_steps=5 format=3 uid="uid://cdbng8tbmogn3"]
+
+[ext_resource type="PackedScene" uid="uid://dbiua1pjcovxb" path="res://Scenes/monster.tscn" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://ca8gy211l7pft" path="res://Scenes/player.tscn" id="2_8gbba"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bo1nx"]
+size = Vector3(30, 1, 30)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_bo1nx"]
 
 [node name="Main" type="Node3D"]
+
+[node name="Monster" parent="." node_paths=PackedStringArray("target") instance=ExtResource("1_bo1nx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3, 3)
+target = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource("2_8gbba")]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 2, -2.398)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_bo1nx")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_bo1nx")
