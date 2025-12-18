@@ -11,14 +11,13 @@ size = Vector3(30, 1, 30)
 [node name="Main" type="Node3D"]
 
 [node name="Monster" parent="." node_paths=PackedStringArray("target") instance=ExtResource("1_bo1nx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.089047, 0, -1.6203108)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3, 3)
 target = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("2_8gbba")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5168955, 0, -2.3980432)
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 2, -2.398)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.246551, -7.770707, -1.3986559)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = SubResource("BoxMesh_bo1nx")
