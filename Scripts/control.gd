@@ -11,4 +11,5 @@ func _on_quit_pressed() -> void:
 
 
 func _on_hit_me_pressed() -> void:
-	audio.play()
+	#audio.play()
+	pass
