@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://mvmyppwxl02f"]
+
+[ext_resource type="Material" uid="uid://bcj131lljntto" path="res://Resources/light.tres" id="1_hccbo"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5t4ml"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_hccbo"]
+
+[node name="flashlight" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.13430308, 0, 0, 0, 0.30211014, 0, 0, 0, 0.13398358, 0, -0.010910109, 0)
+mesh = SubResource("CapsuleMesh_5t4ml")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.00022586714, 0, 0.23288563, 0, -0.019655932, 0, -0.24416858, 0, 0.00021542987, 0, 0.27234936, 0)
+material_override = ExtResource("1_hccbo")
+mesh = SubResource("CylinderMesh_hccbo")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.23499483, 0)
+light_energy = 4.0
+spot_range = 9.300096
+spot_angle = 37.555508

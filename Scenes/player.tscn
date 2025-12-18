@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ca8gy211l7pft"]
+[gd_scene load_steps=7 format=3 uid="uid://ca8gy211l7pft"]
 
 [ext_resource type="Script" uid="uid://db58hja0e2om4" path="res://Scripts/player.gd" id="1_v0iea"]
+[ext_resource type="PackedScene" uid="uid://mvmyppwxl02f" path="res://Scenes/flashlight.tscn" id="2_cvnsp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0iea"]
 albedo_color = Color(1, 0, 0, 1)
@@ -9,6 +10,8 @@ albedo_color = Color(1, 0, 0, 1)
 material = SubResource("StandardMaterial3D_v0iea")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v0iea"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6t5aa"]
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_v0iea")
@@ -21,3 +24,11 @@ shape = SubResource("CapsuleShape3D_v0iea")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="arm" type="MeshInstance3D" parent="Camera3D"]
+transform = Transform3D(-3.4326986e-10, -0.026176995, 0.29989722, 0.3, -4.371139e-08, 0, 1.3108924e-08, 0.99965733, 0.007853099, 0.38, -0.495, -0.177)
+mesh = SubResource("BoxMesh_6t5aa")
+skeleton = NodePath("../..")
+
+[node name="flashlight" parent="Camera3D" instance=ExtResource("2_cvnsp")]
+transform = Transform3D(2.005, 0, 0, 0, -8.764134e-08, 2.005, 0, -2.005, -8.764134e-08, 0.38, -0.495, -0.467)
