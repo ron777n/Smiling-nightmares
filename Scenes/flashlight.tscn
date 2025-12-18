@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://mvmyppwxl02f"]
 
-[ext_resource type="Material" uid="uid://bcj131lljntto" path="res://Resources/light.tres" id="1_hccbo"]
+[ext_resource type="Material" uid="uid://bcj131lljntto" path="res://Resources/Materials/light.tres" id="1_hccbo"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_5t4ml"]
 

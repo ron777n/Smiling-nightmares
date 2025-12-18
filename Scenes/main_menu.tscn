@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c2x76ilphs7p6"]
 
 [ext_resource type="Script" uid="uid://cyoemwssc1rd3" path="res://Scripts/control.gd" id="1_28flt"]
-[ext_resource type="Texture2D" uid="uid://c8i86opxsfe37" path="res://Resources/smile-creepy-989659883.png" id="2_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://c8i86opxsfe37" path="res://Textures/smile-creepy-989659883.png" id="2_1ehe0"]
 [ext_resource type="AudioStream" uid="uid://ua75k3yq012f" path="res://Sound/Sound.mp3" id="2_48xlc"]
 
 [node name="Main menu" type="Node2D"]
