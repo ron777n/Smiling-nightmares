@@ -11,7 +11,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.0
 mesh = ExtResource("1_xhoai")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4039974, -0.17931318, 0.67709756)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4039974, -0.17931318, -1.4569681)
 light_color = Color(1, 0, 0, 1)
 light_energy = 16.0
 light_indirect_energy = 0.0
@@ -19,7 +19,7 @@ light_volumetric_fog_energy = 0.0
 omni_range = 0.233
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2501183, -0.17931318, 0.59201443)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2501183, -0.17931318, -1.3614067)
 light_color = Color(1, 0, 0, 1)
 light_energy = 16.0
 omni_range = 0.233
