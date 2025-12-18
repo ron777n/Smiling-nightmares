@@ -1,7 +1,7 @@
 [gd_scene load_steps=33 format=3 uid="uid://btjkaeulvuiv7"]
 
 [ext_resource type="Script" uid="uid://bv4b3jufm08s7" path="res://Scripts/map_1.gd" id="1_8te53"]
-[ext_resource type="PackedScene" uid="uid://ca8gy211l7pft" path="res://Scenes/player.tscn" id="1_iufso"]
+[ext_resource type="PackedScene" uid="uid://btjkaeulvuiv7" path="res://Scenes/Maps/Map_1.tscn" id="1_iufso"]
 [ext_resource type="AudioStream" uid="uid://caa4kbguym080" path="res://Sound/horror-ambience-01-66708.mp3" id="3_flcxr"]
 [ext_resource type="PackedScene" uid="uid://dbiua1pjcovxb" path="res://Scenes/monster.tscn" id="4_3chno"]
 [ext_resource type="Material" uid="uid://dpw2eggrmcv1b" path="res://Resources/Materials/Floor_Roof.tres" id="5_4v226"]
