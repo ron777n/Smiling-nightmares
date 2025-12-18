@@ -1,7 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://ca8gy211l7pft"]
 
 [ext_resource type="Script" uid="uid://db58hja0e2om4" path="res://Scripts/player.gd" id="1_v0iea"]
+<<<<<<< HEAD
 [ext_resource type="Material" uid="uid://bjr45r54arpps" path="res://Resources/Materials/red.tres" id="2_6t5aa"]
+=======
+[ext_resource type="Material" uid="uid://bjr45r54arpps" path="res://Resources/red.tres" id="2_6t5aa"]
+>>>>>>> 6441995121a488283aed7d1612608ea1247de6d9
 [ext_resource type="PackedScene" uid="uid://mvmyppwxl02f" path="res://Scenes/flashlight.tscn" id="2_cvnsp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0iea"]
@@ -12,7 +16,7 @@ material = SubResource("StandardMaterial3D_v0iea")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v0iea"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_6t5aa"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_6t5aa"]
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_v0iea")
@@ -27,9 +31,9 @@ shape = SubResource("CapsuleShape3D_v0iea")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="arm" type="MeshInstance3D" parent="Camera3D"]
-transform = Transform3D(-3.4326986e-10, -0.026176995, 0.29989722, 0.3, -4.371139e-08, 0, 1.3108924e-08, 0.99965733, 0.007853099, 0.38, -0.495, -0.177)
+transform = Transform3D(-3.4326986e-10, -0.016153237, 0.2979222, 0.3, -2.6973318e-08, -7.454164e-18, 1.3108924e-08, 0.6168661, 0.0078013805, 0.38, -0.495, -0.279765)
 material_override = ExtResource("2_6t5aa")
-mesh = SubResource("BoxMesh_6t5aa")
+mesh = SubResource("CapsuleMesh_6t5aa")
 skeleton = NodePath("../..")
 
 [node name="flashlight" parent="Camera3D" instance=ExtResource("2_cvnsp")]

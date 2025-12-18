@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://ua75k3yq012f" path="res://Sound/Sound.mp3" id="2_48xlc"]
 
 [node name="Main menu" type="Node2D"]
+scale = Vector2(1.2, 1.24)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
