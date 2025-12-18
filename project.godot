@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Smiling nightmares"
 run/main_scene="uid://c2x76ilphs7p6"
-config/features=PackedStringArray("4.5", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 <<<<<<<HEADrun/main_scene="uid://c2x76ilphs7p6"
 
