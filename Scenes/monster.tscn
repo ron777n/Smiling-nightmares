@@ -13,19 +13,17 @@ script = ExtResource("1_i44lo")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.06808269, 1.1920929e-07, -0.38495803)
 mesh = ExtResource("1_xhoai")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
+[node name="OmniLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4039974, -0.17931318, -1.4569681)
 light_color = Color(1, 0, 0, 1)
-light_energy = 16.0
-light_indirect_energy = 0.0
-light_volumetric_fog_energy = 0.0
-omni_range = 0.233
+spot_range = 30.0
+spot_angle = 6.403771
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2501183, -0.17931318, -1.3614067)
+[node name="OmniLight3D3" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25964296, -0.17931318, -1.4569681)
 light_color = Color(1, 0, 0, 1)
-light_energy = 16.0
-omni_range = 0.233
+spot_range = 30.0
+spot_angle = 6.403771
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
