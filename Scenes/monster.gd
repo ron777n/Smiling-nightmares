@@ -9,5 +9,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	look_at(target.position)
-	
+	#look_at(target.position)
+	global_rotation = target.global_position
