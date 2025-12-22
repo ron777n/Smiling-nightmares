@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+class_name Player
+
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var sensitivity = 0.0025
@@ -7,6 +9,9 @@ var sensitivity = 0.0025
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func spawn(spawn_point: Vector3):
+	position = spawn_point
 	
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
