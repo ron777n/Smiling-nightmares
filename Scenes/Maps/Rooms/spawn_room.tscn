@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhw7wghhy856y"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qv7m4"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_w44nu"]
+
+[node name="Spawn Room" type="Node3D"]
+
+[node name="DummyPlayer" type="StaticBody3D" parent="."]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 3.3403435, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DummyPlayer"]
+shape = SubResource("CapsuleShape3D_qv7m4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DummyPlayer"]
+mesh = SubResource("CapsuleMesh_w44nu")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+size = Vector3(10, 1, 10)

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmilfexlvx73h"]
+
+[ext_resource type="Script" uid="uid://cp6d7pm1seosg" path="res://Scenes/Maps/DungeonGenerator.gd" id="1_b527x"]
+
+[node name="RoomMaker" type="Node3D"]
+script = ExtResource("1_b527x")
