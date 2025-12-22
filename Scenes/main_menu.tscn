@@ -47,11 +47,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Quit"
 
-[node name="HitMe" type="Button" parent="Control/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Hit Me"
-
 [node name="SMILINGNIGHTMARESLABEL" type="Label" parent="Control"]
 modulate = Color(0.8272604, 0.21741936, 0, 1)
 layout_mode = 1
@@ -85,4 +80,3 @@ bus = &"Jumpscare"
 
 [connection signal="pressed" from="Control/VBoxContainer/NewGame" to="Control" method="_on_new_game_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Quit" to="Control" method="_on_quit_pressed"]
-[connection signal="pressed" from="Control/VBoxContainer/HitMe" to="Control" method="_on_hit_me_pressed"]
